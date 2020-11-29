@@ -1,9 +1,9 @@
 {
-  "connection_file": "connection.json",
-  "appAdmin": "admin",
-  "appAdminSecret": "adminpw",
+  "connection_file": "ibpConnection.json",
+  "appAdmin": "app-admin",
+  "appAdminSecret": "app-adminpw",
   "orgMSPID": "org1msp",
-  "caName": "ca.org1.example.com",
-  "userName": "user1",
-  "gatewayDiscovery": { "enabled": true, "asLocalhost": true }
+  "caName": "159.122.177.2:30962",
+  "userName": "user2",
+  "gatewayDiscovery": { "enabled": true, "asLocalhost": false }
 }

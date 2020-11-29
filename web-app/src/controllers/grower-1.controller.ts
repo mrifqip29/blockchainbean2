@@ -11,7 +11,7 @@ let blockchainClient = new BlockChainModule.BlockchainClient();
  * by Grower
  * A participant named Grower
  */
-export class GrowerController {
+export class GrowerController1 {
   constructor() { }
 
   /**

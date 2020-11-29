@@ -1,10 +1,9 @@
 'use strict';
 
 const yaml = require('js-yaml');
-const { FileSystemWallet, Gateway } = require('fabric-network');
+const {FileSystemWallet, Gateway} = require('fabric-network');
 const fs = require('fs');
 const path = require('path');
-
 
 // capture network variables from config.json
 const configPath = path.join(process.cwd(), './../server/config.json');
@@ -23,58 +22,70 @@ const ccp = JSON.parse(ccpJSON);
 const wallet = new FileSystemWallet('./../server/wallet');
 
 async function main() {
+    // A gateway defines the peers used to access Fabric networks
+    const gateway = new Gateway();
 
-  // A gateway defines the peers used to access Fabric networks
-  const gateway = new Gateway();
+    // Main try/catch block
+    try {
+        let response;
 
-  // Main try/catch block
-  try {
+        const userExists = await wallet.exists(userName);
+        if (!userExists) {
+            console.log(
+                'An identity for the user ' +
+                    userName +
+                    ' does not exist in the wallet',
+            );
+            console.log('Run the registerUser.js application before retrying');
+            response.error =
+                'An identity for the user ' +
+                userName +
+                ' does not exist in the wallet. Register ' +
+                userName +
+                ' first';
+            return response;
+        }
 
-    let response;
+        // Create a new gateway for connecting to our peer node.
+        await gateway.connect(ccp, {
+            wallet,
+            identity: userName,
+            discovery: gatewayDiscovery,
+        });
 
-    const userExists = await wallet.exists(userName);
-    if (!userExists) {
-        console.log('An identity for the user ' + userName + ' does not exist in the wallet');
-        console.log('Run the registerUser.js application before retrying');
-        response.error = 'An identity for the user ' + userName + ' does not exist in the wallet. Register ' + userName + ' first';
+        console.log('Connected to Fabric gateway.');
+        // Connect to our local fabric
+        const network = await gateway.getNetwork('channel1');
+
+        console.log('Connected to channel1. ');
+
+        // Get the contract we have installed on the peer
+        const contract = await network.getContract('blockchainbean2');
+
+        console.log('\nSubmit hello world transaction.');
+
+        response = await contract.submitTransaction('queryAll');
+
+        console.log(response.toString());
         return response;
+    } catch (error) {
+        console.log(`Error processing transaction. ${error}`);
+        console.log(error.stack);
+    } finally {
+        // Disconnect from the gateway
+        console.log('Disconnect from Fabric gateway.');
+        gateway.disconnect();
     }
-
-    // Create a new gateway for connecting to our peer node.
-    await gateway.connect(ccp, { wallet, identity: userName, discovery: gatewayDiscovery });
-
-    console.log('Connected to Fabric gateway.');
-    // Connect to our local fabric
-    const network = await gateway.getNetwork('mychannel');
-
-    console.log('Connected to mychannel. ');
-
-    // Get the contract we have installed on the peer
-    const contract = await network.getContract('blockchainbean2');
-
-    console.log('\nSubmit hello world transaction.');
-
-    response = await contract.submitTransaction('queryAll');
-    
-    console.log(response.toString())
-    return response;
-
-  } catch (error) {
-    console.log(`Error processing transaction. ${error}`);
-    console.log(error.stack);
-  } finally {
-    // Disconnect from the gateway
-    console.log('Disconnect from Fabric gateway.');
-    gateway.disconnect();
-  }
 }
 
 // invoke the main function, can catch any error that might escape
-main().then(() => {
-  console.log('done');
-}).catch((e) => {
-  console.log('Final error checking.......');
-  console.log(e);
-  console.log(e.stack);
-  process.exit(-1);
-});
+main()
+    .then(() => {
+        console.log('done');
+    })
+    .catch(e => {
+        console.log('Final error checking.......');
+        console.log(e);
+        console.log(e.stack);
+        process.exit(-1);
+    });
