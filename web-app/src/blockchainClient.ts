@@ -64,7 +64,7 @@ export module BlockChainModule {
       //call addMember smart contract function
       //$TODO: dynamically call submitTransaction
       let response = await args.contract.submitTransaction(args.function,
-        args.id, args.organization, args.address, args.memberType);
+        args.id, args.kelompokTani, args.luasLahan, args.alamat, args.memberType);
       return response;
 
 

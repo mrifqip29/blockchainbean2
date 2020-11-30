@@ -5,6 +5,7 @@ export * from './grower.controller';
 export * from './trader.controller';
 export * from './shipper.controller';
 export * from './retailer.controller';
+export * from './petani.controller';
 // export * from './cup-coffee.controller';
 // export * from './coffee.controller';
 export * from './add-coffee.controller';

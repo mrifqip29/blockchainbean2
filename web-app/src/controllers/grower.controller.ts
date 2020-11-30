@@ -34,8 +34,6 @@ export class GrowerController {
       let networkObj = await blockchainClient.connectToNetwork();
       console.log('request body: ')
       console.log(requestBody)
-      console.log('networkObj')
-      console.log(networkObj)
       let dataForAddMember = {
         function: 'addMember',
         id: requestBody.growerId,
