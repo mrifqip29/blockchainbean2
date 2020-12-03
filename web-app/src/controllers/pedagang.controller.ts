@@ -34,7 +34,7 @@ export class PedagangController {
       console.log(requestBody)
       let dataForAddMember = {
         function: 'addMember',
-        id: requestBody.pedagangId,
+        //id: requestBody.pedagangId,
         alamat: `${requestBody.alamat.kota} ${requestBody.alamat.kecamatan} ${requestBody.alamat.kelurahan} ${requestBody.alamat.jalan} ${requestBody.alamat.kodePos}` ,
         memberType: 'pedagang',
         contract: networkObj.contract

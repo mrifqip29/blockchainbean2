@@ -34,7 +34,7 @@ export class PengumpulController {
       console.log(requestBody)
       let dataForAddMember = {
         function: 'addMember',
-        id: requestBody.pengumpulId,
+        //id: requestBody.pengumpulId,
         alamat: `${requestBody.alamat.kota} ${requestBody.alamat.kecamatan} ${requestBody.alamat.kelurahan} ${requestBody.alamat.jalan} ${requestBody.alamat.kodePos}` ,
         memberType: 'pengumpul',
         contract: networkObj.contract

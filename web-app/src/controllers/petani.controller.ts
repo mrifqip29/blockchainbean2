@@ -34,9 +34,9 @@ export class PetaniController {
       console.log(requestBody)
       let dataForAddMember = {
         function: 'addMember',
-        id: requestBody.petaniId,
+        //id: requestBody.petaniId,
         kelompokTani: requestBody.kelompokTani,
-        luasLahan: requestBody.luasLahan,
+        luasLahanHa: requestBody.luasLahanHa,
         alamat: `${requestBody.alamat.kota} ${requestBody.alamat.kecamatan} ${requestBody.alamat.kelurahan} ${requestBody.alamat.jalan} ${requestBody.alamat.kodePos}` ,
         memberType: 'petani',
         contract: networkObj.contract

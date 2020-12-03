@@ -20,11 +20,11 @@ export class Pengumpul {
   @property({name: '$class'})
   $class?: string = 'org.bwangmerah.Pengumpul';
 
-  /**
-   * The instance identifier for this type
-   */
-  @property({name: 'pengumpulId', required: true})
-  pengumpulId: string;
+//   /**
+//    * The instance identifier for this type
+//    */
+//   @property({name: 'pengumpulId', required: true})
+//   pengumpulId: string;
 
   /**
    * A concept named Alamat

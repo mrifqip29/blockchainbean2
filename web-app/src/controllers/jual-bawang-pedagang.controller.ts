@@ -1,16 +1,16 @@
 /* tslint:disable:no-any */
 import { operation, param, requestBody } from '@loopback/rest';
-import { AddBawangMerah } from '../models/add-bawang-merah.model';
+import { JualBawangPedagang } from '../models/jual-bawang-pedagang.model';
 import { ResponseMessage } from '../models/response-message.model';
 import { BlockChainModule } from '../blockchainClient';
 
 let blockchainClient = new BlockChainModule.BlockchainClient();
 /**
  * The controller class is generated from OpenAPI spec with operations tagged
- * by addCoffee
- * A transaction named addCoffee
+ * by jualBawangPedagang
+ * A transaction named jualBawangPedagang
  */
-export class AddCoffeeController {
+export class JualBawangPengumpulController {
   constructor() { }
 
   /**
@@ -20,7 +20,7 @@ export class AddCoffeeController {
    * @param requestBody Model instance data
    * @returns Request was successful
    */
-  @operation('post', '/addBawangMerah', {
+  @operation('post', '/jualBawangPedagang', {
     responses: {
       '200': {
         description: 'ResponseMessage model instance',
@@ -28,29 +28,36 @@ export class AddCoffeeController {
       },
     },
   })
-  async addBawangMerahCreate(@requestBody() requestBody: AddBawangMerah): Promise<ResponseMessage> {
+  async jualBawangPedagangCreate(@requestBody() requestBody: JualBawangPedagang): Promise<ResponseMessage> {
 
     try {
       let networkObj = await blockchainClient.connectToNetwork();
 
-      let dateStr = new Date().toLocaleString();
-      let dataForAddCoffee = {
-        function: 'addBawangMerah',
+      //let dateStr = new Date().toDateString();
+      let dataForJualBawangPedagang = {
+        function: 'jualBawangPedagang',
+        pengumpulId: requestBody.pengumpulId,
+        pedagangId: requestBody.pedagangId,
+        tanggalJual: requestBody.tanggalJual,
+        tanggalKirim: requestBody.tanggalKirim,
+        metodePengiriman: requestBody.metodePengiriman,
         brutoKg: requestBody.brutoKg,
         nettoKg: requestBody.nettoKg,
         hargaPerKg: requestBody.hargaPerKg,
-        hargaTotal: requestBody.hargaTotal,
-        varietasBawang: requestBody.varietasBawang,
+        alamatPengumpul: requestBody.alamatPengumpul,
+        alamatPedagang: requestBody.alamatPedagang,
+        tanggalMasuk: requestBody.tanggalMasuk,
+        bawangId: requestBody.bawangId,
+        alamatGudang: requestBody.alamatGudang,
+        teknikSorting: requestBody.teknikSorting,
+        metodePengemasan: requestBody.metodePengemasan,
         batchState: requestBody.batchState,
-        petaniId: requestBody.petaniId,
-        transactionId: requestBody.transactionId,
-        timestamp: dateStr,
         contract: networkObj.contract
       };
 
-      await blockchainClient.addCoffee(dataForAddCoffee);
+      await blockchainClient.jualBenih(dataForJualBawangPedagang);
 
-      let responseMessage: ResponseMessage = new ResponseMessage({ message: 'added Coffee to Blockchain' });
+      let responseMessage: ResponseMessage = new ResponseMessage({ message: 'added Jual Bawang Pedagang to Blockchain' });
       return responseMessage;
 
     } catch (error) {

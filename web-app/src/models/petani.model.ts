@@ -20,11 +20,11 @@ export class Petani {
   @property({name: '$class'})
   $class?: string = 'org.bawangmerah.Petani';
 
-  /**
-   * The instance identifier for this type
-   */
-  @property({name: 'petaniId', required: true})
-  petaniId: string;
+//   /**
+//    * The instance identifier for this type
+//    */
+//   @property({name: 'petaniId', required: true})
+//   petaniId: string;
 
   /**
    * 
@@ -35,8 +35,8 @@ export class Petani {
   /**
    * 
    */
-  @property({name: 'luasLahan', required: true})
-  luasLahan: string;
+  @property({name: 'luasLahanHa', required: true})
+  luasLahanHa: number;
 
   /**
    * A concept named Alamat

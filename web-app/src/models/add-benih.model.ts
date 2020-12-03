@@ -2,12 +2,12 @@
 import {model, property} from '@loopback/repository';
 
 /**
- * The model class is generated from OpenAPI schema - addCoffee
- * A transaction named addCoffee
+ * The model class is generated from OpenAPI schema - addBenih
+ * A transaction named addBenih
  */
-@model({name: 'addBawangMerah'})
-export class AddBawangMerah {
-  constructor(data?: Partial<AddBawangMerah>) {
+@model({name: 'addBenih'})
+export class AddBenih {
+  constructor(data?: Partial<AddBenih>) {
     if (data != null && typeof data === 'object') {
       Object.assign(this, data);
     }
@@ -50,11 +50,50 @@ export class AddBawangMerah {
   batchState?: string;
 
   /**
-   * The identifier of an instance of grower
+   * 
+   */
+  @property({name: 'metodePengiriman'})
+  metodePengiriman?: string;
+
+  /**
+   * The identifier of an instance of penangkar
+   */
+  @property({name: 'penangkarId'})
+  penangkarId?: string
+
+  /**
+   * The identifier of an instance of penangkar
    */
   @property({name: 'petaniId'})
   petaniId?: string
 
+  /**
+   * 
+   */
+  @property({name: 'alamatPenangkar'})
+  alamatPenangkar?: string
+
+  /**
+   * 
+   */
+  @property({name: 'alamatPetani'})
+  alamatPetani?: string
+
+  /**
+   * 
+   */
+  @property({name: 'umurBenih'})
+  umurBenih?: string
+
+  /**
+   * 
+   */
+  @property({name: 'umurDipanen'})
+  umurDipanen?: string
+
+  /**
+   * 
+   */
   @property({name: 'transactionId'})
   transactionId?: string;
 

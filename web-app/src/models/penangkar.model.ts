@@ -20,11 +20,11 @@ export class Penangkar {
   @property({name: '$class'})
   $class?: string = 'org.bawangmerah.Penangkar';
 
-  /**
-   * The instance identifier for this type
-   */
-  @property({name: 'penangkarId', required: true})
-  penangkarId: string;
+//   /**
+//    * The instance identifier for this type
+//    */
+//   @property({name: 'penangkarId', required: true})
+//   penangkarId: string;
 
   /**
    * 

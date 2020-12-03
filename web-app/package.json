@@ -55,7 +55,8 @@
     "@loopback/rest": "^1.5.4",
     "@loopback/rest-explorer": "^1.1.7",
     "@loopback/service-proxy": "^1.0.7",
-    "memory": "0.0.3"
+    "memory": "0.0.3",
+    "moment": "^2.29.1"
   },
   "devDependencies": {
     "@loopback/build": "^1.2.1",

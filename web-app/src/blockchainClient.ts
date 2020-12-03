@@ -66,11 +66,51 @@ export module BlockChainModule {
       let response = await args.contract.submitTransaction(args.function,
         args.id, args.kelompokTani, args.luasLahan, args.alamat, args.memberType);
       return response;
-
-
     }
 
+    async jualBenih(args: any) {
+      console.log('args in the blockchain client,jualBenih')
+      console.log(args)
 
+      let response = await args.contract.submitTransaction(args.function,
+        args.penangkarId, args.petaniId, args.tanggalJual, args.tanggalKirim,
+        args.metodePengiriman, args.brutoKg, args.nettoKg, args.hargaPerKg, 
+        args.alamatPenangkar, args.alamatPetani, args.lamaPenyimpanan,
+        args.varietasBawang, args.umurBenih, args.umurPanen, args.batchState,
+      );
+
+      return response;
+    }
+
+    async jualBawangPengumpul(args: any) {
+      console.log('args in the blockchain client,jualBawangPengumpul')
+      console.log(args)
+
+      let response = await args.contract.submitTransaction(args.function,
+        args.petaniId, args.pengumpulId, args.tanggalJual, args.tanggalKirim,
+        args.metodePengiriman, args.brutoKg, args.nettoKg, args.hargaPerKg, 
+        args.alamatPetani, args.alamatPengumpul, args.benihId, args.tanggalTanam,
+        args.tanggalPanen, args.pupuk, args.kadarAir, args.pestisida, args.perlakuanLain, 
+        args.ukuranUmbi, args.produktivitas, args.batchState,
+      );
+
+      return response;
+    }
+
+    async jualBawangPedagang(args: any) {
+      console.log('args in the blockchain client,jualBawangPedagang')
+      console.log(args)
+
+      let response = await args.contract.submitTransaction(args.function,
+        args.pengumpulId, args.pedagangId, args.tanggalJual, args.tanggalKirim,
+        args.metodePengiriman, args.brutoKg, args.nettoKg, args.hargaPerKg, 
+        args.alamatPengumpul, args.alamatPedagang, args.tanggalMasuk, args.bawangId,
+        args.alamatGudang, args.teknikSorting, args.metodePengemasan, args.pestisida,
+        args.batchState,
+      );
+
+      return response;
+    }
 
     async queryByKey2(contract: any, keyPassed: any) {
 

@@ -20,11 +20,11 @@ export class Pedagang {
   @property({name: '$class'})
   $class?: string = 'org.bawangmerah.Pedagang';
 
-  /**
-   * The instance identifier for this type
-   */
-  @property({name: 'pedagangId', required: true})
-  pedagangId: string;
+//   /**
+//    * The instance identifier for this type
+//    */
+//   @property({name: 'pedagangId', required: true})
+//   pedagangId: string;
 
   /**
    * A concept named Alamat

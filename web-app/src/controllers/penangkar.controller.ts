@@ -34,7 +34,7 @@ export class PenangkarController {
       console.log(requestBody)
       let dataForAddMember = {
         function: 'addMember',
-        id: requestBody.penangkarId,
+        //id: requestBody.penangkarId,
         kelompokTani: requestBody.kelompokTani,
         alamat: `${requestBody.alamat.kota} ${requestBody.alamat.kecamatan} ${requestBody.alamat.kelurahan} ${requestBody.alamat.jalan} ${requestBody.alamat.kodePos}` ,
         memberType: 'penangkar',
