@@ -1,7 +1,7 @@
 {
-    "name": "blockchainbean2",
-    "version": "0.0.1.3",
-    "description": "My Smart Contract",
+    "name": "bawangmerah",
+    "version": "0.0.1",
+    "description": "Smart Contract Bawang Merah",
     "main": "index.js",
     "engines": {
         "node": ">=8",

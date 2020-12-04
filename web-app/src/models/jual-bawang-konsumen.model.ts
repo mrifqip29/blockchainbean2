@@ -3,21 +3,16 @@ import {model, property} from '@loopback/repository';
 import { Alamat } from './alamat.model';
 
 /**
- * The model class is generated from OpenAPI schema - jualBawangPedagang
- * A transaction named jualBawangPedagang
+ * The model class is generated from OpenAPI schema - jualBawangKonsumen
+ * A transaction named jualBawangKonsumen
  */
-@model({name: 'jualBawangPedagang'})
-export class JualBawangPedagang {
-  constructor(data?: Partial<JualBawangPedagang>) {
+@model({name: 'jualBawangKonsumen'})
+export class JualBawangKonsumen {
+  constructor(data?: Partial<JualBawangKonsumen>) {
     if (data != null && typeof data === 'object') {
       Object.assign(this, data);
     }
   }
-  /**
-   * The identifier of an instance of penangkar
-   */
-  @property({name: 'pengumpulId'})
-  pengumpulId?: string
 
  /**
    * The identifier of an instance of petani
@@ -30,18 +25,6 @@ export class JualBawangPedagang {
    */
   @property({name: 'tanggalJual'})
   tanggalJual?: string;
-
-  /**
-   * 
-   */
-  @property({name: 'tanggalKirim'})
-  tanggalKirim?: string;
-
-  /**
-   * 
-   */
-  @property({name: 'metodePengiriman'})
-  metodePengiriman?: string;
 
   /**
    * 
@@ -60,12 +43,6 @@ export class JualBawangPedagang {
    */
   @property({name: 'hargaPerKg'})
   hargaPerKg?: number;
-
-  /**
-   * 
-   */
-  @property({name: 'alamatPengumpul'})
-  alamatPengumpul?: Alamat
 
   /**
    * 
@@ -90,18 +67,6 @@ export class JualBawangPedagang {
    */
   @property({name: 'alamatGudang'})
   alamatGudang?: Alamat
-
-  /**
-   * 
-   */
-  @property({name: 'teknikSorting'})
-  teknikSorting?: string
-
-  /**
-   * 
-   */
-  @property({name: 'metodePengemasan'})
-  metodePengemasan?: string
 
   /**
    * 

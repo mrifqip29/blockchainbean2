@@ -133,11 +133,5 @@ export class JualBawangPengumpul {
    */
   @property({name: 'batchState', required: true})
   batchState?: string;
-
-  /**
-   * 
-   */
-  @property({name: 'timestamp'})
-  timestamp?: string;
 }
 

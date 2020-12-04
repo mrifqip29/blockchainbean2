@@ -105,7 +105,19 @@ export module BlockChainModule {
         args.pengumpulId, args.pedagangId, args.tanggalJual, args.tanggalKirim,
         args.metodePengiriman, args.brutoKg, args.nettoKg, args.hargaPerKg, 
         args.alamatPengumpul, args.alamatPedagang, args.tanggalMasuk, args.bawangId,
-        args.alamatGudang, args.teknikSorting, args.metodePengemasan, args.pestisida,
+        args.alamatGudang, args.teknikSorting, args.metodePengemasan, args.batchState,
+      );
+
+      return response;
+    }
+
+    async jualBawangKonsumen(args: any) {
+      console.log('args in the blockchain client,jualBawangPedagang')
+      console.log(args)
+
+      let response = await args.contract.submitTransaction(args.function,
+        args.pedagangId, args.tanggalJual, args.brutoKg, args.nettoKg, 
+        args.hargaPerKg, args.alamatPedagang, args.tanggalMasuk, args.bawangId,
         args.batchState,
       );
 
