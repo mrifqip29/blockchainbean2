@@ -66,7 +66,7 @@ export class WorldStateController {
     console.log('before rez: ')
     console.log(result)
     //check if key does not exist, if so, send 404
-    if ( result.indexOf( errorMessage ) > -1 ) {
+    if ( result.toString().includes(errorMessage) ) {
       result = new Error(result);
     }
     return result 
@@ -88,7 +88,7 @@ export class WorldStateController {
     console.log('before rez: ')
     console.log(result)
     //check if key does not exist, if so, send 404
-    if ( result.indexOf( errorMessage ) > -1 ) {
+    if ( result.toString().includes(errorMessage) ) {
       result = new Error(result);
     }
     return result 

@@ -40,7 +40,7 @@ export module BlockChainModule {
         console.log('Connected to channel1. ');
 
         // Get the contract we have installed on the peer
-        const contract = await network.getContract('blockchainbean2');
+        const contract = await network.getContract('bawangmerah');
 
 
         let networkObj = {
@@ -64,7 +64,7 @@ export module BlockChainModule {
       //call addMember smart contract function
       //$TODO: dynamically call submitTransaction
       let response = await args.contract.submitTransaction(args.function,
-        args.id, args.kelompokTani, args.luasLahan, args.alamat, args.memberType);
+        args.kelompokTani, args.alamat, args.luasLahan, args.memberType);
       return response;
     }
 

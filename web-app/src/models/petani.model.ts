@@ -36,7 +36,7 @@ export class Petani {
    * 
    */
   @property({name: 'luasLahanHa', required: true})
-  luasLahanHa: number;
+  luasLahanHa: string;
 
   /**
    * A concept named Alamat
