@@ -66,6 +66,9 @@ export module BlockChainModule {
       if(args.luasLahan == undefined) {
         args.luasLahan = "0"
       }
+      if(args.kelompokTani == undefined) {
+        args.kelompokTani = "Tidak memiliki kelompok tani"
+      }
       let response = await args.contract.submitTransaction(args.function,
         args.kelompokTani, args.alamat, args.luasLahan, args.memberType);
       return response;
