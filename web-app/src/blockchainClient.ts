@@ -63,6 +63,9 @@ export module BlockChainModule {
     async addMember(args: any) {
       //call addMember smart contract function
       //$TODO: dynamically call submitTransaction
+      if(args.luasLahan == undefined) {
+        args.luasLahan == "0"
+      }
       let response = await args.contract.submitTransaction(args.function,
         args.kelompokTani, args.alamat, args.luasLahan, args.memberType);
       return response;

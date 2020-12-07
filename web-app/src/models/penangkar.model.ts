@@ -33,6 +33,12 @@ export class Penangkar {
   kelompokTani?: string;
 
   /**
+   * 
+   */
+  @property({name: 'luasLahanHa', required: true})
+  luasLahanHa: string;
+
+  /**
    * A concept named Alamat
    */
   @property({name: 'alamat', required: true})

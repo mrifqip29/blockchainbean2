@@ -36,6 +36,7 @@ export class PenangkarController {
         function: 'addMember',
         //id: requestBody.penangkarId,
         kelompokTani: requestBody.kelompokTani,
+        luasLahan: requestBody.luasLahanHa,
         alamat: `${requestBody.alamat.kota} ${requestBody.alamat.kecamatan} ${requestBody.alamat.kelurahan} ${requestBody.alamat.jalan} ${requestBody.alamat.kodePos}` ,
         memberType: 'penangkar',
         contract: networkObj.contract
