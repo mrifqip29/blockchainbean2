@@ -42,7 +42,7 @@ export class Petani {
    * A concept named Alamat
    */
   @property({name: 'alamat', required: true})
-  alamat: Alamat;
+  alamat: string;
 
 }
 

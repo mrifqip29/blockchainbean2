@@ -48,7 +48,7 @@ export class JualBawangKonsumen {
    * 
    */
   @property({name: 'alamatPedagang'})
-  alamatPedagang?: Alamat
+  alamatPedagang?: string
 
   /**
    * 
@@ -66,7 +66,7 @@ export class JualBawangKonsumen {
    * 
    */
   @property({name: 'alamatGudang'})
-  alamatGudang?: Alamat
+  alamatGudang?: string
 
   /**
    * 

@@ -18,7 +18,7 @@ export class Pengumpul {
    * The class identifier for this type
    */
   @property({name: '$class'})
-  $class?: string = 'org.bwangmerah.Pengumpul';
+  $class?: string = 'org.bawangmerah.Pengumpul';
 
 //   /**
 //    * The instance identifier for this type
@@ -30,7 +30,7 @@ export class Pengumpul {
    * A concept named Alamat
    */
   @property({name: 'alamat', required: true})
-  alamat: Alamat;
+  alamat: string;
 
 }
 

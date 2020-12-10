@@ -10,7 +10,7 @@ let blockchainClient = new BlockChainModule.BlockchainClient();
  * by jualBawangPedagang
  * A transaction named jualBawangPedagang
  */
-export class JualBawangPengumpulController {
+export class JualBawangPedagangController {
   constructor() { }
 
   /**

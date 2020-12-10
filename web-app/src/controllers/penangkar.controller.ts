@@ -37,7 +37,7 @@ export class PenangkarController {
         //id: requestBody.penangkarId,
         kelompokTani: requestBody.kelompokTani,
         luasLahan: requestBody.luasLahanHa,
-        alamat: `${requestBody.alamat.kota} ${requestBody.alamat.kecamatan} ${requestBody.alamat.kelurahan} ${requestBody.alamat.jalan} ${requestBody.alamat.kodePos}` ,
+        alamat:  requestBody.alamat,
         memberType: 'penangkar',
         contract: networkObj.contract
       };

@@ -30,7 +30,7 @@ export class Pedagang {
    * A concept named Alamat
    */
   @property({name: 'alamat', required: true})
-  alamat: Alamat;
+  alamat: string;
 
 }
 

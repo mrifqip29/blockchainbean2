@@ -37,7 +37,7 @@ export class PetaniController {
         //id: requestBody.petaniId,
         kelompokTani: requestBody.kelompokTani,
         luasLahan: requestBody.luasLahanHa,
-        alamat: `${requestBody.alamat.kota} ${requestBody.alamat.kecamatan} ${requestBody.alamat.kelurahan} ${requestBody.alamat.jalan} ${requestBody.alamat.kodePos}` ,
+        alamat: requestBody.alamat,
         memberType: 'petani',
         contract: networkObj.contract
       };
