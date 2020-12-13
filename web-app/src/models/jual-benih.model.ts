@@ -74,7 +74,7 @@ export class JualBenih {
   @property({name: 'alamatPetani'})
   alamatPetani?: string
 
-  /**
+  /**a
    * 
    */
   @property({name: 'umurBenih'})
