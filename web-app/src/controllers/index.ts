@@ -8,4 +8,3 @@ export * from './pedagang.controller';
 export * from './jual-benih.controller';
 export * from './jual-bawang-pengumpul.controller';
 export * from './jual-bawang-pedagang.controller';
-export * from './jual-bawang-konsumen.controller';
