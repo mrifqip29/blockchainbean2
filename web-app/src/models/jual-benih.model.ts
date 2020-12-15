@@ -48,19 +48,19 @@ export class JualBenih {
    * 
    */
   @property({name: 'brutoKg'})
-  brutoKg?: number;
+  brutoKg?: string;
 
   /**
    * 
    */
   @property({name: 'nettoKg'})
-  nettoKg?: number;
+  nettoKg?: string;
 
   /**
    * 
    */
   @property({name: 'hargaPerKg'})
-  hargaPerKg?: number;
+  hargaPerKg?: string;
 
   /**
    * 
