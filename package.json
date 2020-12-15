@@ -27,7 +27,7 @@
     "posttest": "npm run lint",
     "test:dev": "lb-mocha --allow-console-logs dist/test/**/*.js && npm run posttest",
     "migrate": "node ./dist/src/migrate",
-    "start": "cd web-app && node index.js",
+    "start": "cd web-app && npm start",
     "debug": "node --inspect .",
     "debug-brk": "node --inspect-brk .",
     "prepublishOnly": "npm run test"
