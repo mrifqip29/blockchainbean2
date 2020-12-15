@@ -35,14 +35,25 @@ export class PengumpulController {
       let dataForAddMember = {
         function: 'addMember',
         //id: requestBody.pengumpulId,
-        alamat: requestBody.alamat,
-        memberType: 'pengumpul',
+        nama: requestBody.nama,
+        nomorHP: requestBody.nomorHP,
+        username: requestBody.username,
+        ttl: requestBody.ttl,
+        noKK: requestBody.noKK,
+        noNPWP: requestBody.noNPWP,
+        nik: requestBody.nik,
+        memberType: requestBody.memberType,
+        luasLahan: requestBody.luasLahan,
+        alamatToko: requestBody.alamatToko,
+        alamatLahan: requestBody.alamatLahan,
+        kelompokTani: requestBody.kelompokTani,
+        userID: requestBody.userID,
         contract: networkObj.contract
       };
 
       await blockchainClient.addMember(dataForAddMember);
 
-      let responseMessage: ResponseMessage = new ResponseMessage({ message: 'added Pengumpul to Blockchain' });
+      let responseMessage: ResponseMessage = new ResponseMessage({ message: 'added Pengumpul to Blockchain', body: dataForAddMember });
       return responseMessage;
 
     } catch (error) {

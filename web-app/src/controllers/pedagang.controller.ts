@@ -35,14 +35,25 @@ export class PedagangController {
       let dataForAddMember = {
         function: 'addMember',
         //id: requestBody.pedagangId,
-        alamat:  requestBody.alamat,
-        memberType: 'pedagang',
+        nama: requestBody.nama,
+        nomorHP: requestBody.nomorHP,
+        username: requestBody.username,
+        ttl: requestBody.ttl,
+        noKK: requestBody.noKK,
+        noNPWP: requestBody.noNPWP,
+        nik: requestBody.nik,
+        memberType: requestBody.memberType,
+        luasLahan: requestBody.luasLahan,
+        alamatToko: requestBody.alamatToko,
+        alamatLahan: requestBody.alamatLahan,
+        kelompokTani: requestBody.kelompokTani,
+        userID: requestBody.userID,
         contract: networkObj.contract
       };
 
       await blockchainClient.addMember(dataForAddMember);
 
-      let responseMessage: ResponseMessage = new ResponseMessage({ message: 'added Pedagang to Blockchain' });
+      let responseMessage: ResponseMessage = new ResponseMessage({ message: 'added Pedagang to Blockchain', body: dataForAddMember });
       return responseMessage;
 
     } catch (error) {

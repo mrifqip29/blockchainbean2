@@ -1,6 +1,5 @@
 /* tslint:disable:no-any */
 import {model, property} from '@loopback/repository';
-import { Alamat } from './alamat.model';
 
 /**
  * The model class is generated from OpenAPI schema - jualBawangPedagang
@@ -13,100 +12,47 @@ export class JualBawangPedagang {
       Object.assign(this, data);
     }
   }
-  /**
-   * The identifier of an instance of penangkar
-   */
-  @property({name: 'pengumpulId'})
-  pengumpulId?: string
 
- /**
-   * The identifier of an instance of petani
-   */
-  @property({name: 'pedagangId'})
-  pedagangId?: string
-  
-  /**
-   * 
-   */
-  @property({name: 'tanggalJual'})
-  tanggalJual?: string;
+  @property({name: 'usernamePengirim'})
+  usernamePengirim?: string
 
-  /**
-   * 
-   */
-  @property({name: 'tanggalKirim'})
-  tanggalKirim?: string;
+  @property({name: 'usernamePenerima'})
+  usernamePenerima?: string
 
-  /**
-   * 
-   */
-  @property({name: 'metodePengiriman'})
-  metodePengiriman?: string;
+  @property({name: 'alamatPengirim'})
+  alamatPengirim?: string;
 
-  /**
-   * 
-   */
-  @property({name: 'brutoKg'})
-  brutoKg?: number;
+  @property({name: 'alamatPenerima'})
+  alamatPenerima?: string;
 
-  /**
-   * 
-   */
-  @property({name: 'nettoKg'})
-  nettoKg?: number;
+  @property({name: 'kuantitas'})
+  kuantitas?: string;
 
-  /**
-   * 
-   */
-  @property({name: 'hargaPerKg'})
-  hargaPerKg?: number;
+  @property({name: 'harga'})
+  harga?: string;
 
-  /**
-   * 
-   */
-  @property({name: 'alamatPengumpul'})
-  alamatPengumpul?: string
+  @property({name: 'timestamp'})
+  timestamp?: string;
 
-  /**
-   * 
-   */
-  @property({name: 'alamatPedagang'})
-  alamatPedagang?: string
-
-  /**
-   * 
-   */
   @property({name: 'tanggalMasuk'})
-  tanggalMasuk?: string
+  tanggalMasuk?: string;
 
-  /**
-   * 
-   */
-  @property({name: 'bawangId'})
-  bawangId?: string;
-
-  /**
-   * 
-   */
   @property({name: 'alamatGudang'})
   alamatGudang?: string
 
-  /**
-   * 
-   */
   @property({name: 'teknikSorting'})
   teknikSorting?: string
 
-  /**
-   * 
-   */
   @property({name: 'metodePengemasan'})
   metodePengemasan?: string
 
-  /**
-   * 
-   */
-  @property({name: 'batchState', required: true})
-  batchState?: string;
+  @property({name: 'status'})
+  status?: string
+
+  @property({name: 'transaksiID', required: true})
+  transaksiID?: string;
+
+  @property({name: 'batchID', required: true})
+  batchID?: string;
 }
 

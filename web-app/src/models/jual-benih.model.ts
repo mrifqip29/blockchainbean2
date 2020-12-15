@@ -1,6 +1,5 @@
 /* tslint:disable:no-any */
 import {model, property} from '@loopback/repository';
-import { Alamat } from './alamat.model';
 
 /**
  * The model class is generated from OpenAPI schema - jualBenih
@@ -14,102 +13,49 @@ export class JualBenih {
     }
   }
 
-  /**
-   * The identifier of an instance of penangkar
-   */
-  @property({name: 'penangkarId'})
-  penangkarId?: string
+  @property({name: 'usernamePengirim'})
+  usernamePengirim?: string
 
-  /**
-   * The identifier of an instance of petani
-   */
-  @property({name: 'petaniId'})
-  petaniId?: string
+  @property({name: 'usernamePenerima'})
+  usernamePenerima?: string
 
-  /**
-   * 
-   */
-  @property({name: 'tanggalJual'})
-  tanggalJual?: string;
+  @property({name: 'alamatPengirim'})
+  alamatPengirim?: string;
 
-  /**
-   * 
-   */
-  @property({name: 'tanggalKirim'})
-  tanggalKirim?: string;
+  @property({name: 'alamatPenerima'})
+  alamatPenerima?: string;
 
-    /**
-   * 
-   */
-  @property({name: 'metodePengiriman'})
-  metodePengiriman?: string;
+  @property({name: 'kuantitas'})
+  kuantitas?: string;
 
-  /**
-   * 
-   */
-  @property({name: 'brutoKg'})
-  brutoKg?: number;
+  @property({name: 'harga'})
+  harga?: string;
 
-  /**
-   * 
-   */
-  @property({name: 'nettoKg'})
-  nettoKg?: number;
+  @property({name: 'timestamp'})
+  timestamp?: string;
 
-  /**
-   * 
-   */
-  @property({name: 'hargaPerKg'})
-  hargaPerKg?: number;
-
-  /**
-   * 
-   */
-  @property({name: 'alamatPenangkar'})
-  alamatPenangkar?: string
-
-  /**
-   * 
-   */
-  @property({name: 'alamatPetani'})
-  alamatPetani?: string
-
-  /**a
-   * 
-   */
   @property({name: 'umurBenih'})
-  umurBenih?: string
+  umurBenih?: string;
 
-  /**
-   * 
-   */
-  @property({name: 'varietasBawang'})
-  varietasBawang?: string;
-
-  /**
-   * 
-   */
-  @property({name: 'lamaPenyimpanan'})
-  lamaPenyimpanan?: string;
-
-  /**
-   * 
-   */
   @property({name: 'umurPanen'})
   umurPanen?: string
 
-  /**
-   * 
-   */
-  @property({name: 'batchState', required: true})
-  batchState?: string;
+  @property({name: 'lamaPenyimpanan'})
+  lamaPenyimpanan?: string
 
-  // /**
-  //  * 
-  //  */
-  // @property({name: 'timestamp'})
-  // timestamp?: string;
+  @property({name: 'varietas'})
+  varietas?: string
 
+  @property({name: 'hargaBenih'})
+  hargaBenih?: string;
 
+  @property({name: 'status'})
+  status?: string
+
+  @property({name: 'transaksiID', required: true})
+  transaksiID?: string;
+
+  @property({name: 'batchID', required: true})
+  batchID?: string;
 }
 

@@ -36,32 +36,27 @@ export class JualBawangPengumpulController {
       //let dateStr = new Date().toDateString();
       let dataForJualBawangPengumpul = {
         function: 'jualBawangPengumpul',
-        petaniId: requestBody.petaniId,
-        pengumpulId: requestBody.pengumpulId,
-        tanggalJual: requestBody.tanggalJual,
-        tanggalKirim: requestBody.tanggalKirim,
-        metodePengiriman: requestBody.metodePengiriman,
-        brutoKg: requestBody.brutoKg,
-        nettoKg: requestBody.nettoKg,
-        hargaPerKg: requestBody.hargaPerKg,
-        alamatPetani: requestBody.alamatPetani,
-        alamatPengumpul: requestBody.alamatPengumpul,
-        benihId: requestBody.benihId,
-        tanggalTanam: requestBody.tanggalTanam,
-        tanggalPanen: requestBody.tanggalPanen,
-        pupuk: requestBody.pupuk,
+        usernamePengirim: requestBody.usernamePengirim,
+        usernamePenerima: requestBody.usernamePenerima,
+        alamatPengirim: requestBody.alamatPengirim,
+        alamatPenerima: requestBody.alamatPenerima,
+        kuantitas: requestBody.kuantitas,
+        harga: requestBody.harga,
+        timestamp: requestBody.timestamp,
         kadarAir: requestBody.kadarAir,
+        pupuk: requestBody.pupuk,
         pestisida: requestBody.pestisida,
-        perlakuanLain: requestBody.perlakuanLain,
-        ukuranUmbi: requestBody.ukuranUmbi,
+        perlakuan: requestBody.perlakuan,
         produktivitas: requestBody.produktivitas,
-        batchState: requestBody.batchState,
+        status: requestBody.status,
+        transaksiID: requestBody.transaksiID,
+        batchID: requestBody.batchID,
         contract: networkObj.contract
       };
 
       await blockchainClient.jualBenih(dataForJualBawangPengumpul);
 
-      let responseMessage: ResponseMessage = new ResponseMessage({ message: 'added Jual Bawang Pengumpul to Blockchain' });
+      let responseMessage: ResponseMessage = new ResponseMessage({ message: 'added Jual Bawang Pengumpul to Blockchain', body: dataForJualBawangPengumpul });
       return responseMessage;
 
     } catch (error) {

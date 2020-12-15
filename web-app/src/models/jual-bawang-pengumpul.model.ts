@@ -1,6 +1,5 @@
 /* tslint:disable:no-any */
 import {model, property} from '@loopback/repository';
-import { Alamat } from './alamat.model';
 
 /**
  * The model class is generated from OpenAPI schema - jualBawangPengumpul
@@ -13,125 +12,53 @@ export class JualBawangPengumpul {
       Object.assign(this, data);
     }
   }
-  /**
-   * The identifier of an instance of petani
-   */
-  @property({name: 'petaniId'})
-  petaniId?: string
 
-  /**
-   * The identifier of an instance of penangkar
-   */
-  @property({name: 'pengumpulId'})
-  pengumpulId?: string
+  @property({name: 'usernamePengirim'})
+  usernamePengirim?: string
 
-  /**
-   * 
-   */
-  @property({name: 'tanggalJual'})
-  tanggalJual?: string;
+  @property({name: 'usernamePenerima'})
+  usernamePenerima?: string
 
-  /**
-   * 
-   */
-  @property({name: 'tanggalKirim'})
-  tanggalKirim?: string;
+  @property({name: 'alamatPengirim'})
+  alamatPengirim?: string;
 
-  /**
-   * 
-   */
-  @property({name: 'metodePengiriman'})
-  metodePengiriman?: string;
+  @property({name: 'alamatPenerima'})
+  alamatPenerima?: string;
 
-  /**
-   * 
-   */
-  @property({name: 'brutoKg'})
-  brutoKg?: number;
+  @property({name: 'kuantitas'})
+  kuantitas?: string;
 
-  /**
-   * 
-   */
-  @property({name: 'nettoKg'})
-  nettoKg?: number;
+  @property({name: 'harga'})
+  harga?: string;
 
-  /**
-   * 
-   */
-  @property({name: 'hargaPerKg'})
-  hargaPerKg?: number;
+  @property({name: 'timestamp'})
+  timestamp?: string;
 
-  /**
-   * 
-   */
-  @property({name: 'alamatPetani'})
-  alamatPetani?: string
+  @property({name: 'ukuranUmbi'})
+  ukuranUmbi?: string;
 
-  /**
-   * 
-   */
-  @property({name: 'alamatPengumpul'})
-  alamatPengumpul?: string
-
-  /**
-   * 
-   */
-  @property({name: 'benihId'})
-  benihId?: string
-
-  /**
-   * 
-   */
-  @property({name: 'tanggalTanam'})
-  tanggalTanam?: string;
-
-  /**
-   * 
-   */
-  @property({name: 'tanggalPanen'})
-  tanggalPanen?: string;
-
-  /**
-   * 
-   */
-  @property({name: 'pupuk'})
-  pupuk?: string
-
-  /**
-   * 
-   */
-  @property({name: 'pestisida'})
-  pestisida?: string
-
-  /**
-   * 
-   */
   @property({name: 'kadarAir'})
   kadarAir?: string
 
-  /**
-   * 
-   */
-  @property({name: 'perlakuanLain'})
-  perlakuanLain?: string
+  @property({name: 'pupuk'})
+  pupuk?: string
 
-  /**
-   * 
-   */
-  @property({name: 'ukuranUmbi'})
-  ukuranUmbi?: string
+  @property({name: 'pestisida'})
+  pestisida?: string
 
-  /**
-   * 
-   */
+  @property({name: 'perlakuan'})
+  perlakuan?: string;
+
   @property({name: 'produktivitas'})
-  produktivitas?: string
+  produktivitas?: string;
 
+  @property({name: 'status'})
+  status?: string
 
-  /**
-   * 
-   */
-  @property({name: 'batchState', required: true})
-  batchState?: string;
+  @property({name: 'transaksiID', required: true})
+  transaksiID?: string;
+
+  @property({name: 'batchID', required: true})
+  batchID?: string;
 }
 

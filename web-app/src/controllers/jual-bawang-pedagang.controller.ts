@@ -36,28 +36,26 @@ export class JualBawangPedagangController {
       //let dateStr = new Date().toDateString();
       let dataForJualBawangPedagang = {
         function: 'jualBawangPedagang',
-        pengumpulId: requestBody.pengumpulId,
-        pedagangId: requestBody.pedagangId,
-        tanggalJual: requestBody.tanggalJual,
-        tanggalKirim: requestBody.tanggalKirim,
-        metodePengiriman: requestBody.metodePengiriman,
-        brutoKg: requestBody.brutoKg,
-        nettoKg: requestBody.nettoKg,
-        hargaPerKg: requestBody.hargaPerKg,
-        alamatPengumpul: requestBody.alamatPengumpul,
-        alamatPedagang: requestBody.alamatPedagang,
+        usernamePengirim: requestBody.usernamePengirim,
+        usernamePenerima: requestBody.usernamePenerima,
+        alamatPengirim: requestBody.alamatPengirim,
+        alamatPenerima: requestBody.alamatPenerima,
+        kuantitas: requestBody.kuantitas,
+        harga: requestBody.harga,
+        timestamp: requestBody.timestamp,
         tanggalMasuk: requestBody.tanggalMasuk,
-        bawangId: requestBody.bawangId,
         alamatGudang: requestBody.alamatGudang,
         teknikSorting: requestBody.teknikSorting,
         metodePengemasan: requestBody.metodePengemasan,
-        batchState: requestBody.batchState,
+        status: requestBody.status,
+        transaksiID: requestBody.transaksiID,
+        batchID: requestBody.batchID,
         contract: networkObj.contract
       };
 
       await blockchainClient.jualBenih(dataForJualBawangPedagang);
 
-      let responseMessage: ResponseMessage = new ResponseMessage({ message: 'added Jual Bawang Pedagang to Blockchain' });
+      let responseMessage: ResponseMessage = new ResponseMessage({ message: 'added Jual Bawang Pedagang to Blockchain', body: dataForJualBawangPedagang });
       return responseMessage;
 
     } catch (error) {

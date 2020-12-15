@@ -36,27 +36,27 @@ export class JualBenihController {
       //let dateStr = new Date().toDateString();
       let dataForJualBenih = {
         function: 'jualBenih',
-        penangkarId: requestBody.penangkarId,
-        petaniId: requestBody.petaniId,
-        tanggalJual: requestBody.tanggalJual,
-        tanggalKirim: requestBody.tanggalKirim,
-        metodePengiriman: requestBody.metodePengiriman,
-        brutoKg: requestBody.brutoKg,
-        nettoKg: requestBody.nettoKg,
-        hargaPerKg: requestBody.hargaPerKg,
-        alamatPenangkar: requestBody.alamatPenangkar,
-        alamatPetani: requestBody.alamatPetani,
-        lamaPenyimpanan: requestBody.lamaPenyimpanan,
-        varietasBawang: requestBody.varietasBawang,
+        usernamePengirim: requestBody.usernamePengirim,
+        usernamePenerima: requestBody.usernamePenerima,
+        alamatPengirim: requestBody.alamatPengirim,
+        alamatPenerima: requestBody.alamatPenerima,
+        kuantitas: requestBody.kuantitas,
+        harga: requestBody.harga,
+        timestamp: requestBody.timestamp,
         umurBenih: requestBody.umurBenih,
         umurPanen: requestBody.umurPanen,
-        batchState: requestBody.batchState,
+        lamaPenyimpanan: requestBody.lamaPenyimpanan,
+        varietas: requestBody.varietas,
+        hargaBenih: requestBody.hargaBenih,
+        status: requestBody.status,
+        transaksiID: requestBody.transaksiID,
+        batchID: requestBody.batchID,
         contract: networkObj.contract
       };
 
       await blockchainClient.jualBenih(dataForJualBenih);
 
-      let responseMessage: ResponseMessage = new ResponseMessage({ message: 'added Jual Benih to Blockchain' });
+      let responseMessage: ResponseMessage = new ResponseMessage({ message: 'added Jual Benih to Blockchain', body: dataForJualBenih });
       return responseMessage;
 
     } catch (error) {

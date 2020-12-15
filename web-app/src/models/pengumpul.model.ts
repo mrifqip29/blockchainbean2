@@ -1,6 +1,5 @@
 /* tslint:disable:no-any */
 import {model, property} from '@loopback/repository';
-import { Alamat } from './alamat.model';
 
 /**
  * The model class is generated from OpenAPI schema - Retailer
@@ -14,23 +13,43 @@ export class Pengumpul {
     }
   }
 
-  /**
-   * The class identifier for this type
-   */
-  @property({name: '$class'})
-  $class?: string = 'org.bawangmerah.Pengumpul';
+  @property({name: 'nama'})
+  nama?: string;
 
-//   /**
-//    * The instance identifier for this type
-//    */
-//   @property({name: 'pengumpulId', required: true})
-//   pengumpulId: string;
+  @property({name: 'nomorHP'})
+  nomorHP?: string;
 
-  /**
-   * A concept named Alamat
-   */
-  @property({name: 'alamat', required: true})
-  alamat: string;
+  @property({name: 'username'})
+  username?: string;
 
+  @property({name: 'ttl'})
+  ttl?: string;
+
+  @property({name: 'noKK'})
+  noKK?: string;
+  
+  @property({name: 'noNPWP'})
+  noNPWP?: string;
+
+  @property({name: 'nik'})
+  nik?: string;
+
+  @property({name: 'memberType'})
+  memberType?: string;
+
+  @property({name: 'luasLahan'})
+  luasLahan?: string;
+
+  @property({name: 'alamatToko'})
+  alamatToko?: string;
+
+  @property({name: 'alamatLahan'})
+  alamatLahan?: string;
+
+  @property({name: 'kelompokTani'})
+  kelompokTani?: string;
+  
+  @property({name: 'userID'})
+  userID?: string;
 }
 

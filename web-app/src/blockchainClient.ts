@@ -63,14 +63,23 @@ export module BlockChainModule {
     async addMember(args: any) {
       //call addMember smart contract function
       //$TODO: dynamically call submitTransaction
-      if(args.luasLahan == undefined) {
+      if(args.luasLahan == "string" || "") {
         args.luasLahan = "0"
-      }
-      if(args.kelompokTani == undefined) {
+      } 
+      if(args.kelompokTani == "string" || "") {
         args.kelompokTani = "Tidak memiliki kelompok tani"
+      }       
+      if(args.alamatToko == "string" || "") {
+        args.alamatToko = "Tidak memiliki toko"
+      } 
+      if(args.alamatLahan == "string" || "") {
+        args.alamatLahan = "Tidak memiliki lahan"
       }
+
       let response = await args.contract.submitTransaction(args.function,
-        args.kelompokTani, args.alamat, args.luasLahan, args.memberType);
+        args.nama, args.nomorHP, args.username, args.ttl, args.noKK, 
+        args.nik, args.memberType, args.luasLahan, args.alamatToko, 
+        args.alamatLahan, args.kelompokTani);
       return response;
     }
 
@@ -79,11 +88,13 @@ export module BlockChainModule {
       console.log(args)
 
       let response = await args.contract.submitTransaction(args.function,
-        args.penangkarId, args.petaniId, args.tanggalJual, args.tanggalKirim,
-        args.metodePengiriman, args.brutoKg, args.nettoKg, args.hargaPerKg, 
-        args.alamatPenangkar, args.alamatPetani, args.lamaPenyimpanan,
-        args.varietasBawang, args.umurBenih, args.umurPanen, args.batchState,
+        args.usernamePengirim, args.usernamePenerima, args.alamatPengirim, 
+        args.alamatPengirim, args.kuantitas, args.harga, args.timestamp, 
+        args.umurBenih, args.umurPanen, args.lamaPenyimpanan, args.varietas, 
+        args.hargaBenih, args.status, args.transaksiID, args.batchID
       );
+
+      console.log(args.brutoKg.toString())
 
       return response;
     }
@@ -93,11 +104,10 @@ export module BlockChainModule {
       console.log(args)
 
       let response = await args.contract.submitTransaction(args.function,
-        args.petaniId, args.pengumpulId, args.tanggalJual, args.tanggalKirim,
-        args.metodePengiriman, args.brutoKg, args.nettoKg, args.hargaPerKg, 
-        args.alamatPetani, args.alamatPengumpul, args.benihId, args.tanggalTanam,
-        args.tanggalPanen, args.pupuk, args.kadarAir, args.pestisida, args.perlakuanLain, 
-        args.ukuranUmbi, args.produktivitas, args.batchState,
+        args.usernamePengirim, args.usernamePenerima, args.alamatPengirim, 
+        args.alamatPengirim, args.kuantitas, args.harga, args.timestamp, 
+        args.kadarAir, args.pupuk, args.pestisida, args.perlakuan, 
+        args.produktivitas, args.status, args.transaksiID, args.batchID
       );
 
       return response;
@@ -108,24 +118,10 @@ export module BlockChainModule {
       console.log(args)
 
       let response = await args.contract.submitTransaction(args.function,
-        args.pengumpulId, args.pedagangId, args.tanggalJual, args.tanggalKirim,
-        args.metodePengiriman, args.brutoKg, args.nettoKg, args.hargaPerKg, 
-        args.alamatPengumpul, args.alamatPedagang, args.tanggalMasuk, args.bawangId,
-        args.alamatGudang, args.teknikSorting, args.metodePengemasan, args.batchState,
-      );
-
-      return response;
-    }
-
-    async jualBawangKonsumen(args: any) {
-      console.log('args in the blockchain client,jualBawangPedagang')
-      console.log(args)
-
-      let response = await args.contract.submitTransaction(args.function,
-        args.pedagangId, args.tanggalJual, args.brutoKg, args.nettoKg, 
-        args.hargaPerKg, args.alamatPedagang, args.tanggalMasuk, args.bawangId,
-        args.batchState,
-      );
+        args.usernamePengirim, args.usernamePenerima, args.alamatPengirim, 
+        args.alamatPengirim, args.kuantitas, args.harga, args.timestamp, 
+        args.tanggalMasuk, args.alamatGudang, args.teknikSorting, 
+        args.metodePengemasan, args.status, args.transaksiID, args.batchID);
 
       return response;
     }

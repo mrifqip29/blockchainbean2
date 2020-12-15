@@ -35,16 +35,25 @@ export class PetaniController {
       let dataForAddMember = {
         function: 'addMember',
         //id: requestBody.petaniId,
+        nama: requestBody.nama,
+        nomorHP: requestBody.nomorHP,
+        username: requestBody.username,
+        ttl: requestBody.ttl,
+        noKK: requestBody.noKK,
+        noNPWP: requestBody.noNPWP,
+        nik: requestBody.nik,
+        memberType: requestBody.memberType,
+        luasLahan: requestBody.luasLahan,
+        alamatToko: requestBody.alamatToko,
+        alamatLahan: requestBody.alamatLahan,
         kelompokTani: requestBody.kelompokTani,
-        luasLahan: requestBody.luasLahanHa,
-        alamat: requestBody.alamat,
-        memberType: 'petani',
+        userID: requestBody.userID,
         contract: networkObj.contract
       };
 
       await blockchainClient.addMember(dataForAddMember);
 
-      let responseMessage: ResponseMessage = new ResponseMessage({ message: 'added Petani to Blockchain' });
+      let responseMessage: ResponseMessage = new ResponseMessage({ message: 'added Petani to Blockchain', body: dataForAddMember });
       return responseMessage;
 
     } catch (error) {
