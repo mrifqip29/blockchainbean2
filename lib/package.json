@@ -1,6 +1,6 @@
 {
     "name": "bawangmerah",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "Smart Contract Bawang Merah",
     "main": "index.js",
     "engines": {
