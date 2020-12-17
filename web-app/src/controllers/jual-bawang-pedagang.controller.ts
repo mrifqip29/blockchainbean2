@@ -47,7 +47,7 @@ export class JualBawangPedagangController {
         alamatGudang: requestBody.alamatGudang,
         teknikSorting: requestBody.teknikSorting,
         metodePengemasan: requestBody.metodePengemasan,
-        status: requestBody.status,
+        status: 'confirmed',
         transaksiID: requestBody.transaksiID,
         batchID: requestBody.batchID,
         contract: networkObj.contract

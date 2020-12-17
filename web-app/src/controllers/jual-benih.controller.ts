@@ -48,7 +48,7 @@ export class JualBenihController {
         lamaPenyimpanan: requestBody.lamaPenyimpanan,
         varietas: requestBody.varietas,
         hargaBenih: requestBody.hargaBenih,
-        status: requestBody.status,
+        status: 'confirmed',
         transaksiID: requestBody.transaksiID,
         batchID: requestBody.batchID,
         contract: networkObj.contract

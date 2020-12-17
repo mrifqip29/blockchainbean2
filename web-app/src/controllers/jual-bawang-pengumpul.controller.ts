@@ -49,7 +49,7 @@ export class JualBawangPengumpulController {
         pestisida: requestBody.pestisida,
         perlakuan: requestBody.perlakuan,
         produktivitas: requestBody.produktivitas,
-        status: requestBody.status,
+        status: 'confirmed',
         transaksiID: requestBody.transaksiID,
         batchID: requestBody.batchID,
         contract: networkObj.contract
