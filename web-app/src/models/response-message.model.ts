@@ -12,8 +12,8 @@ export class ResponseMessage {
   @property({ name: 'message', required: true })
   message: string = 'OK';
 
-  @property({ name: 'body', required: true })
-  body: object;
+  // @property({ name: 'body', required: true })
+  // body: Object;
 
   @property({ name: 'statusCode', required: true })
   statusCode: string = '200';

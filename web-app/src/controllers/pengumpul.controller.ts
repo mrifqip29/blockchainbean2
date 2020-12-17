@@ -53,7 +53,7 @@ export class PengumpulController {
 
       await blockchainClient.addMember(dataForAddMember);
 
-      let responseMessage: ResponseMessage = new ResponseMessage({ message: 'added Pengumpul to Blockchain', body: dataForAddMember });
+      let responseMessage: ResponseMessage = new ResponseMessage({ message: 'added Pengumpul to Blockchain' });
       return responseMessage;
 
     } catch (error) {

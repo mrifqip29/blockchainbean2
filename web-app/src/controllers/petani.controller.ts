@@ -53,7 +53,7 @@ export class PetaniController {
 
       await blockchainClient.addMember(dataForAddMember);
 
-      let responseMessage: ResponseMessage = new ResponseMessage({ message: 'added Petani to Blockchain', body: dataForAddMember });
+      let responseMessage: ResponseMessage = new ResponseMessage({ message: 'added Petani to Blockchain' });
       return responseMessage;
 
     } catch (error) {

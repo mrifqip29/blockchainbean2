@@ -53,7 +53,7 @@ export class PenangkarController {
 
       await blockchainClient.addMember(dataForAddMember);
 
-      let responseMessage: ResponseMessage = new ResponseMessage({ message: 'added Penangkar to Blockchain', body: dataForAddMember });
+      let responseMessage: ResponseMessage = new ResponseMessage({ message: 'added Penangkar to Blockchain' });
       return responseMessage;
 
     } catch (error) {

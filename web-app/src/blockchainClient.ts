@@ -94,8 +94,6 @@ export module BlockChainModule {
         args.hargaBenih, args.status, args.transaksiID, args.batchID
       );
 
-      console.log(args.brutoKg.toString())
-
       return response;
     }
 

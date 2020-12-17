@@ -53,7 +53,7 @@ export class PedagangController {
 
       await blockchainClient.addMember(dataForAddMember);
 
-      let responseMessage: ResponseMessage = new ResponseMessage({ message: 'added Pedagang to Blockchain', body: dataForAddMember });
+      let responseMessage: ResponseMessage = new ResponseMessage({ message: 'added Pedagang to Blockchain' });
       return responseMessage;
 
     } catch (error) {

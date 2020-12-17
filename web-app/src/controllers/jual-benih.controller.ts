@@ -56,7 +56,7 @@ export class JualBenihController {
 
       await blockchainClient.jualBenih(dataForJualBenih);
 
-      let responseMessage: ResponseMessage = new ResponseMessage({ message: 'added Jual Benih to Blockchain', body: dataForJualBenih });
+      let responseMessage: ResponseMessage = new ResponseMessage({ message: 'added Jual Benih to Blockchain' });
       return responseMessage;
 
     } catch (error) {
