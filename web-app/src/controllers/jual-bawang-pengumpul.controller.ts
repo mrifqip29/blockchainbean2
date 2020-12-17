@@ -42,6 +42,7 @@ export class JualBawangPengumpulController {
         alamatPenerima: requestBody.alamatPenerima,
         kuantitas: requestBody.kuantitas,
         harga: requestBody.harga,
+        ukuranUmbi: requestBody.ukuranUmbi,
         timestamp: requestBody.timestamp,
         kadarAir: requestBody.kadarAir,
         pupuk: requestBody.pupuk,
@@ -54,7 +55,7 @@ export class JualBawangPengumpulController {
         contract: networkObj.contract
       };
 
-      await blockchainClient.jualBenih(dataForJualBawangPengumpul);
+      await blockchainClient.jualBawangPengumpul(dataForJualBawangPengumpul);
 
       let responseMessage: ResponseMessage = new ResponseMessage({ message: 'added Jual Bawang Pengumpul to Blockchain' });
       return responseMessage;

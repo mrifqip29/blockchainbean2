@@ -104,7 +104,7 @@ export module BlockChainModule {
       let response = await args.contract.submitTransaction(args.function,
         args.usernamePengirim, args.usernamePenerima, args.alamatPengirim, 
         args.alamatPengirim, args.kuantitas, args.harga, args.timestamp, 
-        args.kadarAir, args.pupuk, args.pestisida, args.perlakuan, 
+        args.ukuranUmbi, args.kadarAir, args.pupuk, args.pestisida, args.perlakuan, 
         args.produktivitas, args.status, args.transaksiID, args.batchID
       );
 
@@ -117,7 +117,7 @@ export module BlockChainModule {
 
       let response = await args.contract.submitTransaction(args.function,
         args.usernamePengirim, args.usernamePenerima, args.alamatPengirim, 
-        args.alamatPengirim, args.kuantitas, args.harga, args.timestamp, 
+        args.alamatPengirim, args.kuantitas, args.harga, args.timestamp,
         args.tanggalMasuk, args.alamatGudang, args.teknikSorting, 
         args.metodePengemasan, args.status, args.transaksiID, args.batchID);
 

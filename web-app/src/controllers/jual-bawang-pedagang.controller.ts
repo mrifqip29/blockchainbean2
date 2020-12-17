@@ -53,7 +53,7 @@ export class JualBawangPedagangController {
         contract: networkObj.contract
       };
 
-      await blockchainClient.jualBenih(dataForJualBawangPedagang);
+      await blockchainClient.jualBawangPedagang(dataForJualBawangPedagang);
 
       let responseMessage: ResponseMessage = new ResponseMessage({ message: 'added Jual Bawang Pedagang to Blockchain' });
       return responseMessage;
