@@ -63,16 +63,16 @@ export module BlockChainModule {
     async addMember(args: any) {
       //call addMember smart contract function
       //$TODO: dynamically call submitTransaction
-      if(args.luasLahan == "string" || "") {
+      if(args.luasLahan == "string") {
         args.luasLahan = "0"
       } 
-      if(args.kelompokTani == "string" || "") {
+      if(args.kelompokTani == "string") {
         args.kelompokTani = "Tidak memiliki kelompok tani"
       }       
-      if(args.alamatToko == "string" || "") {
+      if(args.alamatToko == "string") {
         args.alamatToko = "Tidak memiliki toko"
       } 
-      if(args.alamatLahan == "string" || "") {
+      if(args.alamatLahan == "string") {
         args.alamatLahan = "Tidak memiliki lahan"
       }
 
