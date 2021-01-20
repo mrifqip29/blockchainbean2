@@ -78,8 +78,10 @@ export module BlockChainModule {
 
       let response = await args.contract.submitTransaction(args.function,
         args.nama, args.nomorHP, args.username, args.ttl, args.noKK, 
-        args.nik, args.memberType, args.luasLahan, args.alamatToko, 
-        args.alamatLahan, args.kelompokTani);
+        args.noNPWP,args.nik, args.memberType, args.luasLahan, 
+        args.alamatToko, args.alamatLahan, args.kelompokTani, args.userID
+        );
+
       return response;
     }
 
@@ -88,10 +90,10 @@ export module BlockChainModule {
       console.log(args)
 
       let response = await args.contract.submitTransaction(args.function,
-        args.usernamePengirim, args.usernamePenerima, args.alamatPengirim, 
-        args.alamatPengirim, args.kuantitas, args.harga, args.timestamp, 
-        args.umurBenih, args.umurPanen, args.lamaPenyimpanan, args.varietas, 
-        args.hargaBenih, args.status, args.transaksiID, args.batchID
+        args.usernamePengirim, args.usernamePenerima, args.alamatPengirim, args.alamatPenerima, 
+        args.kuantitas, args.harga, args.timestamp, args.umurBenih, args.umurPanen, 
+        args.lamaPenyimpanan, args.varietas, args.hargaBenih, args.status, 
+        args.transaksiID, args.batchID
       );
 
       return response;
@@ -102,10 +104,10 @@ export module BlockChainModule {
       console.log(args)
 
       let response = await args.contract.submitTransaction(args.function,
-        args.usernamePengirim, args.usernamePenerima, args.alamatPengirim, 
-        args.alamatPengirim, args.kuantitas, args.harga, args.timestamp, 
-        args.ukuranUmbi, args.kadarAir, args.pupuk, args.pestisida, args.perlakuan, 
-        args.produktivitas, args.status, args.transaksiID, args.batchID
+        args.usernamePengirim, args.usernamePenerima, args.alamatPengirim, args.alamatPenerima, 
+        args.kuantitas, args.harga, args.timestamp, args.ukuranUmbi, args.kadarAir, 
+        args.pupuk, args.pestisida, args.perlakuan, args.produktivitas, args.status, 
+        args.transaksiID, args.batchID
       );
 
       return response;
@@ -116,10 +118,9 @@ export module BlockChainModule {
       console.log(args)
 
       let response = await args.contract.submitTransaction(args.function,
-        args.usernamePengirim, args.usernamePenerima, args.alamatPengirim, 
-        args.alamatPengirim, args.kuantitas, args.harga, args.timestamp,
-        args.tanggalMasuk, args.alamatGudang, args.teknikSorting, 
-        args.metodePengemasan, args.status, args.transaksiID, args.batchID);
+        args.usernamePengirim, args.usernamePenerima, args.alamatPengirim, args.alamatPenerima, 
+        args.kuantitas, args.harga, args.timestamp,args.tanggalMasuk, args.alamatGudang, 
+        args.teknikSorting, args.metodePengemasan, args.status, args.transaksiID, args.batchID);
 
       return response;
     }
